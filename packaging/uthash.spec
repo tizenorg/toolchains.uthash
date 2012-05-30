@@ -6,6 +6,7 @@ License:   BSD-style single-clause
 Group:     System/Kernel
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 Source0:   %{name}-%{version}.tar.bz2
+Source1001: packaging/uthash.manifest 
 
 %description
 Any C structure can be stored in a hash table using 
@@ -24,6 +25,7 @@ Description: %{summary}
 %prep
 %setup -q 
 %build
+cp %{SOURCE1001} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -36,6 +38,7 @@ cp utarray.h uthash.h utlist.h utstring.h $RPM_BUILD_ROOT/usr/include
 %clean
 
 %files devel
+%manifest uthash.manifest
 %defattr(-,root,root,-)
 %{_includedir}/utarray.h
 %{_includedir}/uthash.h
