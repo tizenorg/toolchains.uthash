@@ -32,6 +32,7 @@ mkdir -p  $RPM_BUILD_ROOT/usr/include
 cd src
 cp utarray.h uthash.h utlist.h utstring.h $RPM_BUILD_ROOT/usr/include
 
+
 %clean
 
 %files devel
